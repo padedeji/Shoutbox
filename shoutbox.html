@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <title>Shoutbox</title>
+    <link rel="stylesheet" type="text/css" href="shoutbox-style.css" />
+
+  </head>
+
+  <body>
+
+    <div>
+      <form action="/" method="post">
+        <div class="forms" id="topForm">Shout it!</div><input name="comment" style="display:block" size="100%" height="500"></input>
+        <div class="forms">What is your name?</div><input name="name" style="display:block" size="100%" height="500"></input>
+        <br />
+        <div><input id="submitBtn" type="submit" value="Submit"></input></div>
+      </form>
+    </div>
+
+    <TABLE BORDER="1" CELLSPACING="1" CELLPADDING="1">
+    <tr>
+     <th>Last Ten Visitors</th>
+     <th>Their Comments</th>
+   </tr>
+    <h2>It's A Shoutbox!</h2>
+    <tr>
+    <td id="usernames">  {% for user in users %}
+      <ul id = "placedUserName">{{user.name}}
+      </ul>
+    {% endfor %}
+  </td>
+    <td id="comments"> {% for user in users %}
+      <ul id="placedComments"> {{user.comment}}
+      </ul>
+      {% endfor %}
+      </td>
+    </TR>
+  </TABLE>
+
+</html>
